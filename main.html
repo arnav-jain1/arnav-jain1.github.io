@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joey Compton</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            background-color: #000;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+            padding: 1rem;
+        }
+        .hero img {
+            margin-bottom: 1.5rem;
+        }
+        .datetime {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #e02020;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img width="300" height="90" src="imgs/Joey-Compton-4-18-2025.png" alt="Joey Compton Logo">
+        <div class="datetime" id="datetime"></div>
+        <nav>
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#photography">photography</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const options = {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            };
+            const now = new Date();
+            const formatted = now.toLocaleString('en-US', options);
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById('datetime').textContent = `${formatted} ${tz}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 60 * 1000);
+    </script>
+</body>
+</html>
