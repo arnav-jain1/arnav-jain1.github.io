@@ -92,7 +92,7 @@ Calling the function with an invalid argument as shown with `invalid = func(inva
 	If the function were to instead have the type annotation `np.ndarray[Tuple[int,4]]`, then MyPy would indicate an error. 
 	![[img4.png]]
 
-The type `valid`, the output of calling the function, will be the type of the return statement (in this case the variable `c`). It does **NOT** take the argument into account as this would be differing from MyPy's intended behavior. 
+The type `valid` of valid will be the type of the return statement (in this case the variable `c`). It does **NOT** take the argument into account as this would be differing from MyPy's intended behavior. Additionally, if a type annotation is given, it will default to that. Once again, we don't want to be more strict than the user.
 ![[img3.png]]
 
 ### Example 3
