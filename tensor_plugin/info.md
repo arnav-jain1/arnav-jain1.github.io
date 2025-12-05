@@ -1,5 +1,5 @@
 # Type System for Tensors
-Note: For a much more in depth view, check out the (WIP) paper [here](img/paper.pdf) \
+Note: For a much more in depth view, check out the (VERY WIP) paper [here](img/paper.pdf) \
 Note2: To check out the plugin repo, click [here](https://github.com/arnav-jain1/mypy_plugin)
 
 ## Overview
